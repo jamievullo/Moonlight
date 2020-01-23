@@ -15,7 +15,7 @@ const pickQuizParams = () => {
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
             </select>
-            <button type="submit" id="quiz-button">Submit</button>
+            <button id="quiz-button">Submit</button>
         </center>
     </form>`;
     quizParamsElement.innerHTML = quizParams
@@ -27,10 +27,10 @@ const pickQuizParams = () => {
 }
 
 const getSelection = () => {
-    const quizButton = document.getElementById('quiz-button')
+    const quizButton = document.querySelector('#quiz-button')
     quizButton.addEventListener('click', e => {
-        //e.preventDefault();
-        //console.log(e)
+        e.preventDefault();
+        console.log(e)
         //sets variables to the values selected in dropdowns
         const category = document.getElementById('category').value
         const difficulty = document.getElementById('difficulty').value

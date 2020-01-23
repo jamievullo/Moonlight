@@ -68,6 +68,8 @@ ruby '2.6.1'
 * http://leaflet-extras.github.io/leaflet-providers/preview/
 * https://leanpub.com/leaflet-tips-and-tricks
 * https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+* https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/
+
 
 ### License
 * MIT License

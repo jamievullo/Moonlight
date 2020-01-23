@@ -7,7 +7,7 @@ const createSortArray = () => {
 const sortButtonListener = () => {
     const sortButtonElement = document.getElementById('sort-planets')
     sortButtonElement.addEventListener('click', e => {
-        console.log(e)
+        // console.log(e)
         wipeAccordian();
         renderTheSortedArray();
         toggleButtonText();

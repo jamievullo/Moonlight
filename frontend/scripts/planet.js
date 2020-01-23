@@ -82,7 +82,7 @@ class Planet {
         </div>
         <div id="user-form"></div>
         <div id="welcome-user"><div class="welcome"><h2 style="color: white"><center>${user.name}, please select a Planet 
-        by clicking on a tile.</center></h2></div></div>
+        by clicking on a tile.</center></h2></div><center><button id="sort-planets">Sort Planets</button></center></div>
         <div id="planet-pics">
             <div class="accordian">
                 <ul>
@@ -104,12 +104,16 @@ class Planet {
 
         selectPlanet();
         listeners();
+        //listener for sort button
+        sortButtonListener();
     }
 }
 
+//declares variable for sort array
 let sortArray;
 
 const fetchAllPlanets = () => {  
+    //clears out sort array for each use because we will be rendering 36 planets after 4 go's
     sortArray = []
     fetch(`${targetUrl}/planets`)
     .then(function (response) {
@@ -118,6 +122,7 @@ const fetchAllPlanets = () => {
     .then(function (data) {
         data.forEach(planet => {
             //console.log(planet)
+            //pushes each planet into an array to be able to sort them alphabetically
             sortArray.push(planet)
             // console.log(sortArray)
         Planet.renderPlanets(planet)
@@ -139,7 +144,7 @@ const welcomeUser = (name) => {
     x.innerHTML = navbar();
     listeners();
     welcomeUserBox.innerHTML = welcome;
-    
+    //listener for 1st sort button
     sortButtonListener();
     selectPlanet();
 }

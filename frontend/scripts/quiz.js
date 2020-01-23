@@ -9,7 +9,6 @@ const pickQuizParams = () => {
             <select id="category">
                 <option value="17">Science & Nature</option>
                 <option value="18">Computers</option>
-                <option value="19">Mathematics</option>
                 <option value="22">Geography</option>
             </select>
             <select id="difficulty">

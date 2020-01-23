@@ -31,6 +31,7 @@ body {
 }
 
 .accordian {
+    /* margin-top: 20px; */
     width: 960px;
     height: 400px;
     overflow: hidden;
@@ -310,4 +311,8 @@ input:invalid:required {
 
 input:valid {
     border: 2px solid rgb(67, 64, 255);
+}
+
+#sort-planets {
+    margin-top: 20px;
 }

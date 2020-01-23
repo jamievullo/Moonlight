@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
 const userForm = () => {
     const form = `<div class="jumbotron" id="new-user-form">
     <center>
-        <h2 style="color: white">Welcome to Project Moonlight where we 
-        will explore the Planets and Moons of our Solar System</h2>
+        <h2 style="color: white">Welcome to Project Moonlight, where you 
+        can explore the Planets and Moons of our Solar System</h2>
         <form>
             <div>
                 <label for"userName" style="color: white">Username:</label>
-                <input type="text" id="userName" name="userName" required minlength="2">
+                <input type="text" id="userName" name="userName" placeholder="Enter a Username" required minlength="2">
                 <button type="submit">Start Exploring</button>
             </div>
         </form>

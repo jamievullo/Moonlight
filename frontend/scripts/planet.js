@@ -14,18 +14,7 @@ class Planet {
     }
 
     static renderPlanets(planet) {
-        // const clearForm = document.getElementById('user-form');
-        // const clearMainImage = document.getElementById('main-pic');
-        // //clear form and main image
-        // clearForm.innerHTML = "";
-        // clearMainImage.remove();
-        // const addAccordian = document.getElementById('planet-pics')
-        // const loadAccordian = `
-        // <div class="accordian>
-        //     <ul>
-        //     </ul>
-        // </div>`
-        // addAccordian.innerHTML = loadAccordian
+       
         const showAccordian = document.querySelector('.accordian')
         showAccordian.classList.remove('d-none')
         const selectPicElement = document.querySelector('ul');
@@ -39,6 +28,7 @@ class Planet {
                 </a>
         </li>`;
         selectPicElement.innerHTML += loadPlanetPics;
+        
     }
 
     static renderSelectedPlanet(chosenPlanet) { //passes in e.target.previousElementSibling.outerHTML
@@ -117,7 +107,10 @@ class Planet {
     }
 }
 
-const fetchAllPlanets = () => {
+let sortArray;
+
+const fetchAllPlanets = () => {  
+    sortArray = []
     fetch(`${targetUrl}/planets`)
     .then(function (response) {
         return response.json();
@@ -125,6 +118,8 @@ const fetchAllPlanets = () => {
     .then(function (data) {
         data.forEach(planet => {
             //console.log(planet)
+            sortArray.push(planet)
+            // console.log(sortArray)
         Planet.renderPlanets(planet)
         })
     })
@@ -135,13 +130,17 @@ const welcomeUser = (name) => {
     const welcomeUserBox = document.getElementById('welcome-user');
     //create variable that displays welcome message based on username.
     const welcome = `<div class="welcome"><h2 style="color: white"><center>Welcome ${name}, please select a Planet 
-    by clicking on a tile.</center></h2></div>`;
+    by clicking on a tile.</center></h2></div>
+    <center><button id="sort-planets">Sort Planets</button></center>
+    `;
 
+    
     const x = document.getElementById('navbar')
     x.innerHTML = navbar();
     listeners();
     welcomeUserBox.innerHTML = welcome;
-
+    
+    sortButtonListener();
     selectPlanet();
 }
 
